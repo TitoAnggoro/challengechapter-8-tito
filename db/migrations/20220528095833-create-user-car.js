@@ -10,27 +10,19 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         references: {
-          model: {
-            tableName: 'Users',
-          },
+          model: { tableName: 'Users' },
           key: 'id',
         },
       },
       carId: {
         type: Sequelize.INTEGER,
         references: {
-          model: {
-            tableName: 'Cars',
-          },
+          model: { tableName: 'Cars' },
           key: 'id',
         },
       },
-      rentStartedAt: {
-        type: Sequelize.DATE,
-      },
-      rentEndedAt: {
-        type: Sequelize.DATE,
-      },
+      rentStartedAt: { type: Sequelize.DATE },
+      rentEndedAt: { type: Sequelize.DATE },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

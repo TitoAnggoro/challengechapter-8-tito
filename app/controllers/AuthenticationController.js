@@ -75,9 +75,7 @@ class AuthenticationController extends ApplicationController {
 
       const accessToken = this.createTokenFromUser(user, user.Role);
 
-      res.status(201).json({
-        accessToken,
-      });
+      res.status(201).json({ accessToken });
     } catch (err) {
       next(err);
     }
@@ -96,9 +94,7 @@ class AuthenticationController extends ApplicationController {
         return;
       }
 
-      const role = await this.roleModel.findOne({
-        where: { name: this.accessControl.CUSTOMER },
-      });
+      const role = await this.roleModel.findOne({ where: { name: this.accessControl.CUSTOMER } });
 
       const user = await this.userModel.create({
         name,
@@ -109,9 +105,7 @@ class AuthenticationController extends ApplicationController {
 
       const accessToken = this.createTokenFromUser(user, role);
 
-      res.status(201).json({
-        accessToken,
-      });
+      res.status(201).json({ accessToken });
     } catch (err) {
       next(err);
     }

@@ -1,6 +1,4 @@
-const {
-  Model,
-} = require('sequelize');
+const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class UserCar extends Model {
@@ -10,13 +8,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.User, {
-        foreignKey: 'userId',
-      });
+      this.belongsTo(models.User, { foreignKey: 'userId' });
 
-      this.belongsTo(models.Car, {
-        foreignKey: 'carId',
-      });
+      this.belongsTo(models.Car, { foreignKey: 'carId' });
     }
   }
   UserCar.init({

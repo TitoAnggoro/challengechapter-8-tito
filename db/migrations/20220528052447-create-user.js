@@ -7,24 +7,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
-      },
-      email: {
-        type: Sequelize.STRING,
-      },
-      image: {
-        type: Sequelize.STRING,
-      },
-      encryptedPassword: {
-        type: Sequelize.STRING,
-      },
+      name: { type: Sequelize.STRING },
+      email: { type: Sequelize.STRING },
+      image: { type: Sequelize.STRING },
+      encryptedPassword: { type: Sequelize.STRING },
       roleId: {
         type: Sequelize.INTEGER,
         references: {
-          model: {
-            tableName: 'Roles',
-          },
+          model: { tableName: 'Roles' },
           key: 'id',
         },
       },

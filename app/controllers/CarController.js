@@ -73,12 +73,8 @@ class CarController extends ApplicationController {
       const activeRent = await this.userCarModel.findOne({
         where: {
           carId: car.id,
-          rentStartedAt: {
-            [Op.gte]: rentStartedAt,
-          },
-          rentEndedAt: {
-            [Op.lte]: rentEndedAt,
-          },
+          rentStartedAt: { [Op.gte]: rentStartedAt },
+          rentEndedAt: { [Op.lte]: rentEndedAt },
         },
       });
 
@@ -153,11 +149,7 @@ class CarController extends ApplicationController {
 
     if (size) where.size = size;
     if (availableAt) {
-      include.where = {
-        rentEndedAt: {
-          [Op.gte]: availableAt,
-        },
-      };
+      include.where = { rentEndedAt: { [Op.gte]: availableAt } };
     }
 
     const query = {

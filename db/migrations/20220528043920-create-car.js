@@ -7,21 +7,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
-      },
-      price: {
-        type: Sequelize.FLOAT,
-      },
-      size: {
-        type: Sequelize.STRING,
-      },
-      image: {
-        type: Sequelize.STRING,
-      },
-      isCurrentlyRented: {
-        type: Sequelize.BOOLEAN,
-      },
+      name: { type: Sequelize.STRING },
+      price: { type: Sequelize.FLOAT },
+      size: { type: Sequelize.STRING },
+      image: { type: Sequelize.STRING },
+      isCurrentlyRented: { type: Sequelize.BOOLEAN },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
