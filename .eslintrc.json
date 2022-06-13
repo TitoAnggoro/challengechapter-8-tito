@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "es2021": true
+        "es2021": true,
+        "jest/globals": true
     },
     "extends": [
         "airbnb-base"
@@ -10,11 +11,14 @@
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "plugins": ["jest"],
     "rules": {
         "global-require": "off",
+        "linebreak-style": 0,
         "import/no-dynamic-require": "off",
         "class-methods-use-this": ["error", { "enforceForClassFields": false }],
         "linebreak-style": ["error", "windows"],
-        "object-curly-newline": ["error", { "multiline": true, "minProperties": 5 }]
+        "object-curly-newline": ["error", { "multiline": true, "minProperties": 5 }],
+        "no-undef": "off"
     }
 }
